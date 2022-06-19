@@ -2,6 +2,7 @@ package Test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import vn.fis.training.ordermanagement.domain.Order;
 import vn.fis.training.ordermanagement.domain.OrderItem;
 import vn.fis.training.ordermanagement.domain.OrderStatus;
@@ -9,7 +10,7 @@ import vn.fis.training.ordermanagement.repository.OrderRepository;
 import vn.fis.training.ordermanagement.service.OrderService;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class OrderServiceImplTest {
     @Autowired
     private OrderService orderService;

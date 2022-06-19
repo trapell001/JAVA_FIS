@@ -2,11 +2,12 @@ package vn.fis.training.ordermanagement.service.impl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import vn.fis.training.ordermanagement.domain.Customer;
 import vn.fis.training.ordermanagement.service.CustomerService;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class CustomerServiceImplTest {
 
     @Autowired
