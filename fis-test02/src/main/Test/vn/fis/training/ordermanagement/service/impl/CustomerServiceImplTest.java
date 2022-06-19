@@ -14,17 +14,21 @@ class CustomerServiceImplTest {
     @Test
     void createCustomer() {
         Customer customer = new Customer();
-        customer.setAddress("Ninh Bình");
-        customer.setMobile("0936271124");
-        customer.setName("Đỗ Hải Phong");
         customerService.createCustomer(customer);
     }
 
     @Test
     void updateCustomer() {
+        Customer customer = new Customer();
+        customer.setName("khanh");
+        customer.setAddress("abc");
+        customer.setMobile("1");
+        customerService.updateCustomer(customer);
     }
 
     @Test
     void deleteCustomerById() {
+        customerService.deleteCustomerById(1l);
     }
+
 }
