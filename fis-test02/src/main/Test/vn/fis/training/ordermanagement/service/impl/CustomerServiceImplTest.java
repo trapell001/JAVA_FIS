@@ -21,6 +21,7 @@ class CustomerServiceImplTest {
     @Test
     void updateCustomer() {
         Customer customer = new Customer();
+        customer.setId(1l);
         customer.setName("khanh");
         customer.setAddress("abc");
         customer.setMobile("1");
