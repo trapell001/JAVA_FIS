@@ -10,5 +10,7 @@ public class CriminalCase {
     private long id;
     @Column
     private int version;
+    @Column
+    private
 
 }
