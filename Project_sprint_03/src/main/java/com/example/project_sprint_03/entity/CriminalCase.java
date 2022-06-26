@@ -1,6 +1,6 @@
 package com.example.project_sprint_03.entity;
-import com.example.project_sprint_03.entity.ultil.CaseStatus;
-import com.example.project_sprint_03.entity.ultil.CaseType;
+import com.example.project_sprint_03.ultil.CaseStatus;
+import com.example.project_sprint_03.ultil.CaseType;
 import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -17,13 +17,13 @@ public class CriminalCase {
     private LocalDate created_at;
     @Column
     private String number;
-    @Column
+    @Enumerated(EnumType.STRING)
     private CaseType type;
     @Column
     private String shortDescription;
     @Column
     private String detailedDescription;
-    @Column
+    @Enumerated(EnumType.STRING)
     private CaseStatus status;
     @Column
     private String note;
