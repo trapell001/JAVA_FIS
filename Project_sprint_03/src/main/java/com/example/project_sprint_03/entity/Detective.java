@@ -5,6 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -34,4 +36,5 @@ public class Detective {
     private int armed;
     @Enumerated(EnumType.STRING)
     private CaseStatus status;
+    
 }

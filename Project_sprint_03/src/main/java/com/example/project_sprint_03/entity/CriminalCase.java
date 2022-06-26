@@ -4,6 +4,9 @@ import com.example.project_sprint_03.entity.ultil.CaseType;
 import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Data
@@ -27,7 +30,9 @@ public class CriminalCase {
     private CaseStatus status;
     @Column
     private String note;
-    @Column
-    private int leadInvestigatorId;
-
+    @ManyToOne
+    @JoinColumn()
+    private Detective leadInvestigatorId;
+    @OneToMany(mappedBy = "evidence")
+    private Set<Evidence> evidences = new HashSet<>();
 }

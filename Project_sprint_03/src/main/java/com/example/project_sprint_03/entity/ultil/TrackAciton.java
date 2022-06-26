@@ -1,4 +1,5 @@
 package com.example.project_sprint_03.entity.ultil;
 
-public class TrackAciton {
+public enum TrackAciton {
+    SUBMITTED,RETRIEVED,RETURNED;
 }

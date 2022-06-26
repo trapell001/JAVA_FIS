@@ -1,12 +1,14 @@
 package com.example.project_sprint_03.entity;
 
+import com.example.project_sprint_03.entity.ultil.TrackAciton;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-@Data
+
 @Entity
-public class Evidence {
+@Data
+public class TrackEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -14,16 +16,9 @@ public class Evidence {
     private int version;
     @Column
     private LocalDate created_at;
+    @Enumerated(EnumType.STRING)
+    private TrackAciton action;
     @Column
-    private String number;
-    @Column
-    private String itemName;
-    @Column
-    private String note;
-    @Column
-    private boolean archived;
-    @Column
-    private int criminalCaseId;
-    @Column
-    private int storageId;
+    private String reason;
+
 }
