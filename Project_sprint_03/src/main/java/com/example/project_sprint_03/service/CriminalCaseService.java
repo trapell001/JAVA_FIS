@@ -4,6 +4,14 @@ import com.example.project_sprint_03.entity.CriminalCase;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 public interface CriminalCaseService {
-    CriminalCase
+    List<CriminalCase> findAll();
+
+    CriminalCase findById(Long criminalCaseId);
+
+    void save(CriminalCase criminalCase);
+
+    void deleteById(Long criminalCaseId);
 }

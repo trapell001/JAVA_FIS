@@ -1,7 +1,6 @@
 package com.example.project_sprint_03.entity;
-
-import com.example.project_sprint_03.ultil.CaseStatus;
-import com.example.project_sprint_03.ultil.Rank;
+import com.example.project_sprint_03.entity.ultil.CaseStatus;
+import com.example.project_sprint_03.entity.ultil.Rank;
 import lombok.Data;
 
 import javax.persistence.*;
