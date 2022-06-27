@@ -6,10 +6,7 @@ import java.util.List;
 
 public interface EvidenciService {
     List<Evidence> findAll();
-
     Evidence findEvidenceById(Long evidenceId);
-
-    void creatEvidence(Evidence evidence);
-
+    Evidence creatEvidence(Evidence evidence);
     void deleteEvidenceById(Long evidenceId);
 }
