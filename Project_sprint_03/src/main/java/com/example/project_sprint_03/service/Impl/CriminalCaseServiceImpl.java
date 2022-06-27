@@ -32,13 +32,13 @@ public class CriminalCaseServiceImpl implements CriminalCaseService{
     }
 
     @Override
-    public void createCriminalCase(CriminalCase criminalCase) {
-        criminalCaseRepository.save(criminalCase);
+    public CriminalCase createCriminalCase(CriminalCase criminalCase) {
+        return criminalCaseRepository.save(criminalCase);
     }
 
     @Override
-    public void updateCriminalCase(CriminalCase criminalCase) {
-        findCriminalCaseById(criminalCase.getId()).
+    public CriminalCase updateCriminalCase(CriminalCase criminalCase) {
+        return criminalCaseRepository.save(criminalCase);
     }
 
     @Override

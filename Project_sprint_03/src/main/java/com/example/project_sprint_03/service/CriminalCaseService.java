@@ -8,12 +8,8 @@ import java.util.List;
 
 public interface CriminalCaseService {
     List<CriminalCase> findAll();
-
     CriminalCase findCriminalCaseById(Long criminalCaseId);
-
-    void createCriminalCase(CriminalCase criminalCase);
-
-    void updateCriminalCase(CriminalCase criminalCase);
-
+    CriminalCase createCriminalCase(CriminalCase criminalCase);
+    CriminalCase updateCriminalCase(CriminalCase criminalCase);
     void deleteCriminaCaseById(Long criminalCaseId);
 }

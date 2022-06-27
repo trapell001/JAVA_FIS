@@ -25,8 +25,8 @@ public class EvidenceServiceImpl implements EvidenciService {
     }
 
     @Override
-    public void creatEvidence(Evidence evidence) {
-        evidenceRepository.save(evidence);
+    public Evidence creatEvidence(Evidence evidence) {
+        return evidenceRepository.save(evidence);
     }
 
     @Override
