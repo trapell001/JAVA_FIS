@@ -10,6 +10,7 @@ import java.util.Set;
 
 @Data
 @Entity
+
 public class Detective {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +31,16 @@ public class Detective {
     private LocalDateTime hiringDate;
     @Column
     private String badgeNumber;
+    @Column(name = "detective_rank")
     @Enumerated(EnumType.STRING)
-    private Rank rankOfDetective;
+    private Rank rank;
     @Column
     private int armed;
     @Enumerated(EnumType.STRING)
     private CaseStatus status;
-    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="criminal_detective",
+            joinColumns = @JoinColumn(name = "criminal_case_id",nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "detective_id",nullable = false))
+    private Set<CriminalCase> criminalCases;
 }

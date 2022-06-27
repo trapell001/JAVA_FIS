@@ -1,9 +1,13 @@
 package com.example.project_sprint_03.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
+
 @Data
 @Entity
 public class Evidence {
@@ -22,8 +26,13 @@ public class Evidence {
     private String note;
     @Column
     private boolean archived;
-    @Column
-    private int criminalCaseId;
-    @Column
-    private int storageId;
+    @ManyToOne
+    @JoinColumn(name = "criminal_case_id")
+    private CriminalCase criminalCase;
+
+    @ManyToOne
+    @JoinColumn(name = "storage_id")
+    private Storage storage;
+    @OneToMany(mappedBy = "evidence")
+    private Set<TrackEntry> trackEntries;
 }

@@ -1,9 +1,13 @@
 package com.example.project_sprint_03.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
+
 @Entity
 @Data
 public class Storage {
@@ -18,4 +22,6 @@ public class Storage {
     private String name;
     @Column
     private String location;
+    @OneToMany(mappedBy = "storage")
+    private Set<Evidence> evidences;
 }

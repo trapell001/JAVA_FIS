@@ -6,10 +6,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
-
 @Entity
 @Data
+
 public class CriminalCase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,9 +29,10 @@ public class CriminalCase {
     private CaseStatus status;
     @Column
     private String note;
-//    @ManyToOne
-//    @JoinColumn()
-//    private Detective leadInvestigatorId;
-//    @OneToMany(mappedBy = "evidence")
-//    private Set<Evidence> evidences = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "detective_id")
+    private Detective leadInvestigatorId;
+    @OneToMany
+    @JoinTable(name = "criminal_case_evidence",joinColumns = @JoinColumn(name = "criminal_case_id"),inverseJoinColumns = @JoinColumn(name = "evidence_id"))
+    private Set<Evidence> evidences = new HashSet<>();
 }

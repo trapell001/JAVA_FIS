@@ -20,5 +20,10 @@ public class TrackEntry {
     private TrackAciton action;
     @Column
     private String reason;
-
+    @ManyToOne
+    @JoinColumn(name = "evidence_id", nullable = false)
+    private Evidence evidence;
+    @ManyToOne
+    @JoinColumn(name = "detective_id", nullable = false)
+    private Detective detective;
 }
