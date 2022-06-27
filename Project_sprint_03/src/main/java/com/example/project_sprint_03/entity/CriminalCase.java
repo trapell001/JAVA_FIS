@@ -30,9 +30,9 @@ public class CriminalCase {
     private CaseStatus status;
     @Column
     private String note;
-    @ManyToOne
-    @JoinColumn()
-    private Detective leadInvestigatorId;
-    @OneToMany(mappedBy = "evidence")
-    private Set<Evidence> evidences = new HashSet<>();
+//    @ManyToOne
+//    @JoinColumn()
+//    private Detective leadInvestigatorId;
+//    @OneToMany(mappedBy = "evidence")
+//    private Set<Evidence> evidences = new HashSet<>();
 }
