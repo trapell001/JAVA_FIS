@@ -38,7 +38,7 @@ public class Detective {
     private int armed;
     @Enumerated(EnumType.STRING)
     private CaseStatus status;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name="criminal_detective",
             joinColumns = @JoinColumn(name = "criminal_case_id",nullable = false),
             inverseJoinColumns = @JoinColumn(name = "detective_id",nullable = false))
