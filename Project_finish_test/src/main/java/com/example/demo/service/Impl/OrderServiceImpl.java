@@ -7,6 +7,7 @@ import com.example.demo.entity.Order;
 import com.example.demo.entity.OrderItem;
 import com.example.demo.entity.OrderStatus;
 import com.example.demo.entity.Product;
+import com.example.demo.exeption.OrderNotFoundException;
 import com.example.demo.mapper.AddOrderItemMapper;
 import com.example.demo.mapper.CreatOrderMapper;
 import com.example.demo.repo.OrderItemRepository;
@@ -44,6 +45,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order findOrderById(Long orderId) {
         Optional<Order> order = orderRepository.findById(orderId);
+        order.orElseThrow(()->new OrderNotFoundException());
         return order.get();
     }
 

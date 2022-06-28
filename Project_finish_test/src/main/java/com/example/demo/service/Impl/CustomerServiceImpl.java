@@ -2,9 +2,11 @@ package com.example.demo.service.Impl;
 
 import com.example.demo.dto.CustomerDTO;
 import com.example.demo.entity.Customer;
+import com.example.demo.exeption.CustomerNotFoundException;
 import com.example.demo.mapper.CustomerMapper;
 import com.example.demo.repo.CustomerRepository;
 import com.example.demo.service.CustomerService;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,6 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO findCustomerById(Long customerId) {
         Optional<Customer> customer= customerRepository.findById(customerId);
+        customer.orElseThrow(() -> new CustomerNotFoundException());
         return customerMapper.to(customer.get());
     }
     @Override
